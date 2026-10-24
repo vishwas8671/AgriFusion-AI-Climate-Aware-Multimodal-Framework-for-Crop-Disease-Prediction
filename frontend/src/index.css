@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --forest: #173F35;
+    --agri: #287D5A;
+    --sage: #E8F0EB;
+    --offwhite: #F7F8F5;
+    --charcoal: #202B27;
+    --neutralgrey: #66736D;
+    --amber: #D99A27;
+    --red: #C74747;
+  }
+
+  body {
+    background-color: #F7F8F5;
+    color: #202B27;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Accessible focus indicators */
+  *:focus-visible {
+    outline: 2px solid #287D5A;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Scientific Agriculture UI Components */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md font-medium text-sm text-white bg-agri hover:bg-agri-hover transition-colors shadow-subtle disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-agri/50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md font-medium text-sm text-forest bg-sage/60 hover:bg-sage border border-neutralgrey-border/60 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md font-medium text-sm text-charcoal bg-white hover:bg-sage/40 border border-neutralgrey-border transition-colors;
+  }
+
+  .card-scientific {
+    @apply bg-white rounded-lg border border-neutralgrey-border/70 p-5 shadow-card transition-shadow hover:shadow-elevated;
+  }
+
+  .badge-scientific {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium tracking-wide uppercase;
+  }
+
+  .badge-low {
+    @apply bg-emerald-50 text-emerald-800 border border-emerald-200;
+  }
+
+  .badge-moderate {
+    @apply bg-amber-50 text-amber-800 border border-amber-200;
+  }
+
+  .badge-high {
+    @apply bg-red-50 text-red-800 border border-red-200;
+  }
+
+  .badge-healthy {
+    @apply bg-agri-subtle text-agri border border-agri/30;
+  }
+
+  .input-field {
+    @apply w-full px-3.5 py-2.5 rounded-md bg-white border border-neutralgrey-border text-charcoal text-sm placeholder-neutralgrey-light focus:border-agri focus:ring-1 focus:ring-agri transition-all outline-none;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8DFDC;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ba7a1;
+}
